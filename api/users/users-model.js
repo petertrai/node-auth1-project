@@ -1,8 +1,16 @@
 /**
   resolves to an ARRAY with all users, each user having { user_id, username }
  */
-function find() {
+const db = require('../../data/db-config')
+module.exports = {
+  find,
+  findBy,
+  findById,
+  add
+}
 
+function find() {
+  return db('users').select('user_id', 'username')
 }
 
 /**
